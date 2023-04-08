@@ -33,7 +33,9 @@ const Login = () => {
             const data = await response.json();
             console.log(data);
             if (data.idToken) {
-                localStorage.setItem("user", JSON.stringify(data))
+                const idtoken = data.idToken
+                localStorage.setItem("user", idtoken)
+
                 navigate("/expense")
             }
         } catch (error) {

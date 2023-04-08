@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import "./Signup.css"
 
 const Signup = () => {
@@ -15,7 +15,7 @@ const Signup = () => {
         if (password.length > 5 && password === cpassword) {
             try {
                 const response = await fetch(
-"https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDMydJmt7CfP_0gOdtkgIyYRBQlEOMIutw", {
+                    "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDMydJmt7CfP_0gOdtkgIyYRBQlEOMIutw", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -64,6 +64,7 @@ const Signup = () => {
                 />
 
                 <input type="submit" value="Signup" />
+                <p>Have account already, <Link to="/login">Login</Link></p>
             </form>
         </div>
     )

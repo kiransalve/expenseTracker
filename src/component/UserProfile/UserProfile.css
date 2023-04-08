@@ -4,7 +4,7 @@
   justify-content: center;
 }
 .profile {
-  background-color: #f2f2f2;
+  background-color: #333;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px;
@@ -15,6 +15,7 @@
 .profile h2 {
   font-size: 24px;
   font-weight: bold;
+  color: #fff;
   margin-bottom: 20px;
 }
 
@@ -23,21 +24,16 @@
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
+  color: #fff;
 }
 
 .profile input[type="text"] {
-  width: 100%;
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 5px;
+  outline: none;
   border: 1px solid #ccc;
   font-size: 16px;
-}
-
-.profile input[type="text"]:focus {
-  outline: none;
-  border-color: #4d90fe;
-  box-shadow: 0 0 5px #4d90fe;
 }
 
 .profile button {
