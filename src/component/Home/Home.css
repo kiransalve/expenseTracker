@@ -14,7 +14,7 @@
   margin-bottom: 40px;
 }
 
-button {
+.home-button {
   background-color: #333;
   padding: 10px 20px;
   font-size: 1.2em;
@@ -23,7 +23,7 @@ button {
   cursor: pointer;
 }
 
-button a {
+.home-button a {
   color: #fff;
   text-decoration: none;
 }

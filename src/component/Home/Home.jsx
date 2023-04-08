@@ -7,7 +7,7 @@ const Home = () => {
         <div class="home">
             <h1>Welcome to my Expense Tracker App!</h1>
             <p>Here you can track your expenses.</p>
-            <button><Link to="/signup">Signup Here</Link></button>
+            <button className='home-button'><Link to="/signup">Signup Here</Link></button>
         </div>
 
     )
