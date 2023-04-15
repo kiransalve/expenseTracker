@@ -9,6 +9,7 @@ const Login = () => {
 
     useEffect(() => {
         const loggedInUser = localStorage.getItem('user')
+
         if (loggedInUser) {
             navigate("/expense")
         }
@@ -35,14 +36,34 @@ const Login = () => {
             if (data.idToken) {
                 const idtoken = data.idToken
                 localStorage.setItem("user", idtoken)
-
-                navigate("/expense")
+                alert("You are logged in Successfully, Kindly verify email")
             }
         } catch (error) {
-
+            console.log(error)
         }
-
     }
+    const sendVerificationEmail = async () => {
+        try {
+            const response = await fetch(
+                `https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyDMydJmt7CfP_0gOdtkgIyYRBQlEOMIutw`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        requestType: "VERIFY_EMAIL",
+                        idToken: localStorage.getItem("user"),
+                    }),
+                }
+            );
+            const data = await response.json();
+            console.log(data);
+            navigate("/expense")
+        } catch (error) {
+            console.error(error);
+        }
+    };
     return (
         <div className='login'>
             <form onSubmit={handleFormSubmit} className='loginForm'>
@@ -63,6 +84,9 @@ const Login = () => {
                 />
 
                 <input type='submit' value='Login' />
+
+                <button onClick={sendVerificationEmail}>Verify Email</button>
+
             </form>
         </div>
 

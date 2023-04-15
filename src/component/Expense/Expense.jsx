@@ -7,6 +7,7 @@ const Expense = () => {
     <div className="expense">
       <h1>Welcome to Expense Tracker App!</h1>
       <p className='expense-subtitle'>Here you can track your expenses.</p>
+      <Link className='verify-link' to="/login">Verify Email</Link>
       <div className="message-container">
         <div className="message">Your profile is incomplete,
           <Link className="userProfile-link" to="/userProfile"> Complete Profile</Link>

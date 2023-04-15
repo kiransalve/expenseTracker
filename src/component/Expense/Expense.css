@@ -36,3 +36,12 @@
   color: black;
   cursor: pointer;
 }
+
+.verify-link {
+  background-color: rgb(196, 134, 225);
+  padding: 8px;
+  font-weight: 700;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+}
